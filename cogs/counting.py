@@ -25,7 +25,7 @@ class counting(commands.Cog):
 
     # tsetupcounting
     @commands.command()
-    async def setupcounting(self, ctx):
+    async def setup(self, ctx):
         if not ctx.author.guild_permissions.administrator:
             await ctx.reply(embed = await basic_embed(f"", f"{self.client.Emojis['danger']} You are missing the permission `administrator`.",self.client.Red,""))
             return
@@ -249,23 +249,24 @@ class counting(commands.Cog):
         if found_webhook == False:
             webhook = await ctx.channel.create_webhook(name=self.client.user, avatar=None, reason=None)
         
+        cluster_user = self.client.mongodb["Counting"]["User"]
+        users = cluster_user.find_one({"id": user.id})
+
+        # Send webhook
+        if channels["emoji"] == "true":
+            await webhook.send(content=f'{await convert_num2emoji(self, new_number, users["font"])}', username=f"{ctx.author.name}", avatar_url=user_avatar_url)
+        else:
+            await webhook.send(content=f'{new_number}', username=f"{ctx.author.name}", avatar_url=user_avatar_url)
+
         #update values for main
         cluster.update_one({"channel":channel.id},{"$set":{"number":new_number}})
         cluster.update_one({"channel":channel.id},{"$set":{"last_user":user.id}})
         
         #update values for user
-        cluster = self.client.mongodb["Counting"]["User"]
-        users = cluster.find_one({"id": user.id})
         if users is None:
             users = {"id": user.id, "count": 1, "fonts": "Default", "font": "Default"}
-            cluster.insert_one(users)
-        cluster.update_one({"id": user.id},{"$set":{"count":users["count"]+1}})
-
-        # Send webhook
-        if channels["emoji"] == "true":
-            await webhook.send(content=f'˞{await convert_num2emoji(self, new_number, users["font"])}', username=f"{ctx.author.name}", avatar_url=user_avatar_url)
-        else:
-            await webhook.send(content=f'˞{new_number}', username=f"{ctx.author.name}", avatar_url=user_avatar_url)
+            cluster_user.insert_one(users)
+        cluster_user.update_one({"id": user.id},{"$set":{"count":users["count"]+1}})
 
     # tshop
     @commands.command()
@@ -383,7 +384,9 @@ class counting(commands.Cog):
 async def convert_num2emoji(self, number,emoji):
     data = self.client.Count_Emojis
     output = "+"
-    if number[0] == "-":
+    print(number)
+    print(str(number)[1::])
+    if str(number)[0] == "-":
         number = number[1::]
         output = "-"
     if emoji == "Default":
