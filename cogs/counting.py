@@ -384,10 +384,8 @@ class counting(commands.Cog):
 async def convert_num2emoji(self, number,emoji):
     data = self.client.Count_Emojis
     output = "+"
-    print(number)
-    print(str(number)[1::])
     if str(number)[0] == "-":
-        number = number[1::]
+        number = str(number)[1::]
         output = "-"
     if emoji == "Default":
         return f"{output}{number}"
