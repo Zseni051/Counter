@@ -9,7 +9,7 @@ from discord import AutoShardedClient
 from discord.ext import commands
 
 defaultprefix = "c!"
-botishosted = False
+botishosted = True
 
 async def get_prefix(client, ctx):
     cluster = client.mongodb["Settings"]["ServerPrefix"]
