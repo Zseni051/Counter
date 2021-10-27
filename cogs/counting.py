@@ -249,8 +249,12 @@ class counting(commands.Cog):
         if found_webhook == False:
             webhook = await ctx.channel.create_webhook(name=self.client.user, avatar=None, reason=None)
         
+        # Get values for user
         cluster_user = self.client.mongodb["Counting"]["User"]
         users = cluster_user.find_one({"id": user.id})
+        if users is None:
+            users = {"id": user.id, "count": 1, "fonts": "Default", "font": "Default"}
+            cluster_user.insert_one(users)
 
         # Send webhook
         if channels["emoji"] == "true":
@@ -263,9 +267,6 @@ class counting(commands.Cog):
         cluster.update_one({"channel":channel.id},{"$set":{"last_user":user.id}})
         
         #update values for user
-        if users is None:
-            users = {"id": user.id, "count": 1, "fonts": "Default", "font": "Default"}
-            cluster_user.insert_one(users)
         cluster_user.update_one({"id": user.id},{"$set":{"count":users["count"]+1}})
 
     # tshop
