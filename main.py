@@ -10,7 +10,7 @@ from datetime import datetime
 from discord.ext import commands
 
 defaultprefix = "c!"
-botishosted = False
+botishosted = True
 
 async def get_prefix(client, ctx):
     def prefix(client, ctx, prefix):
