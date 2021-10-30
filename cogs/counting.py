@@ -348,9 +348,10 @@ class counting(commands.Cog):
         command_syntax = f"Syntax: {self.client.serverprefix}countuse <font>"
         user = ctx.author
         font = font.capitalize() 
-        if font not in self.client.CountEmojisFonts or font != "Default":
-            await ctx.reply(embed = basic_embed("", f"{self.client.Emojis['danger']} Not an existing font.",self.client.Red,f"{command_syntax}"), mention_author=False)
-            return
+        if font not in self.client.CountEmojisFont:
+            if font != "Default":
+                await ctx.reply(embed = basic_embed("", f"{self.client.Emojis['danger']} Not an existing font.",self.client.Red,f"{command_syntax}"), mention_author=False)
+                return
         cluster = self.client.mongodb["Counting"]["User"]
         users = cluster.find_one({"id": ctx.author.id})
 
@@ -361,7 +362,6 @@ class counting(commands.Cog):
             cluster.update_one({"id": ctx.author.id},{"$set":{"font": font}})
             if font == "Default":
                 description = "You're now using the **Default** Font\n0 1 2 3 4 5 6 7 8 9"
-                await ctx.reply(embed = basic_embed("Equipped!", f"You're now using the **Default** Font\n0 1 2 3 4 5 6 7 8 9",self.client.Blue,f"{command_syntax}"), mention_author=False)
             else:
                 data = self.client.CountEmojis
                 emojis = f'{data[font]["Emoji_0"]}{data[font]["Emoji_1"]}{data[font]["Emoji_2"]}{data[font]["Emoji_3"]}{data[font]["Emoji_4"]}{data[font]["Emoji_5"]}{data[font]["Emoji_6"]}{data[font]["Emoji_7"]}{data[font]["Emoji_8"]}{data[font]["Emoji_9"]}'
