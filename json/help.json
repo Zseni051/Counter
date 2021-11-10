@@ -7,7 +7,7 @@
 "count":
     {"desc_short": "Check your count and the fonts you own.", 
     "desc_long": "Check your count and the fonts you own. You can obtain counts by counting which is then used to buy fonts.",
-    "usage": "count",
+    "usage": "count [user]",
     "aliases": "count, balance, bal"},
 "buy":
     {"desc_short": "Buy fonts from the shop.", 
@@ -22,12 +22,12 @@
 "equip":
     {"desc_short": "Equip one of your fonts.", 
     "desc_long": "Equip one of your fonts. Fonts are used to replace discord's normal text, spice up your counting channel.",
-    "usage": "equip",
+    "usage": "equip <font>",
     "aliases": "equip, use"},
 "changeprefix":
     {"desc_short": "Change the bot's prefix for this server.", 
     "desc_long": "Change the bot's prefix for this server. Mentioning the bot is a permanent prefix",
-    "usage": "changeprefix ",
+    "usage": "changeprefix <prefix>",
     "aliases": "changeprefix"},
 "prefix":
     {"desc_short": "Get the bot's prefix for this server.", 
@@ -53,5 +53,10 @@
     {"desc_short": "Get system and general information on the bot.", 
     "desc_long": "Get system and general information on the bot.",
     "usage": "botinfo",
-    "aliases": "botinfo, bi, info"}
+    "aliases": "botinfo, bi, info"},
+"channel":
+    {"desc_short": "Get the settings of the counting channel.", 
+    "desc_long": "Get the settings of the counting channel.",
+    "usage": "channel <channel>",
+    "aliases": "channel"}
 }
