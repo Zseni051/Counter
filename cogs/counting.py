@@ -398,7 +398,7 @@ class counting(commands.Cog):
         command_syntax = f"Syntax: {self.client.serverprefix}buy <font>"
         user = ctx.author
         font = font.replace("_"," ").title().replace(" ","_")
-        if font not in self.client.CountEmojisFonts:
+        if font not in self.client.CountEmojisFont:
             await ctx.reply(embed = basic_embed("", f"{self.client.Emojis['danger']} Not an existing font.",self.client.Red,f"{command_syntax}"), mention_author=False)
             return
         cluster = self.client.mongodb["Counting"]["User"]
