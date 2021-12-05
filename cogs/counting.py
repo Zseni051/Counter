@@ -314,7 +314,7 @@ class counting(commands.Cog):
         if channels["emoji"] == "true":
             await webhook.send(content=f'{convert_num2emoji(self, new_number, users["font"])}{content}', username=f"{ctx.author.name}", avatar_url = user_avatar_url(user))
         else:
-            await webhook.send(content=f'{convert_num2emoji(self, new_number, "Default")}{content}', username=f"{ctx.author.name}", avatar_url = user_avatar_url(user))
+            await webhook.send(content=f'{new_number}{content}', username=f"{ctx.author.name}", avatar_url = user_avatar_url(user))
 
         #update values for main
         cluster.update_one({"channel":channel.id},{"$set":{"number":new_number}})
