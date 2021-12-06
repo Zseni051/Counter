@@ -1,14 +1,12 @@
 import asyncio
-from logging import error
 import discord
-import re
 
 from discord.ext import commands
 from datetime import datetime
 from typing import Optional
 from discord import Member
 
-from .functions import basic_embed, user_avatar_url, page_button
+from .functions import basic_embed, user_avatar_url
 
 class counting(commands.Cog):
     def __init__(self, client):
