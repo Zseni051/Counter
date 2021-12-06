@@ -1,0 +1,27 @@
+{
+    "invisible": "<:invisible:907575396868960256>",
+    
+    "info": "<:info:896630557008621598>",
+    "danger": "<:danger:896630582921023519>",
+    
+    "lock": "<:lock:897639895718326383>",
+    "unlock": "<:unlock:897639918443049021>",
+
+    "cogs": "<a:cogs:859407226035765288>",
+    "static_cog": "<:static_cog:862507223062151168>",
+    "warning": "<:warning:861488027905425419>",
+    "question_mark": "<:question_mark:861771749461196800>",
+    "green_check1": "<a:green_check1:861578504188198912>",
+
+    "empty_checkbox": "<:empty_checkbox:861484710898434108>",
+    "marked_checkbox": "<:marked_checkbox:861590371162652692>",
+    "empty_checkbox_2": "<:empty_checkbox_2:907868858344427551>",
+    "marked_checkbox_2": "<:marked_checkbox_2:907868757098102795>",
+    "reply": "<:reply:897010400934105139>",
+    "reply_2": "<:reply_2:907880142934769664>",
+    
+    "arrow_left": "<:arrow_left:903485598415876116>",
+    "arrow_right": "<:arrow_right:903485554660868166>",
+    "arrow_left2": "<:arrow_left2:910765703991263252>",
+    "arrow_right2": "<:arrow_right2:910765656146841620>"
+}
