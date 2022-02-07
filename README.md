@@ -16,18 +16,35 @@
 <br>**Invite:** [link](https://discord.com/api/oauth2/authorize?client_id=862604561515937813&permissions=4294967287&scope=bot%20applications.commands)
 
 ## Features
-- [x] **Easy Fast Setup**
-- [x] **Any Starting Number**
-- [x] **Any Interval**
-- [x] **Talking**
-<br>- Allow users to have text after the specified number
-- [x] **Alternate**
-<br>- Force users to Alternate beetween eachother.
-- [x] **Fonts**
-<br>- By counting you earn points, which then can be used to buy numerous fonts to count with.
-- [x] **Game Modes**
-<br>- Tug of War
+- [x] **Easy Fast Setup**<details><summary>Read more</summary>
+Have a user friendly interface guide you through setting up the bot in your server
+</details>
 
+- [x] **Any Starting Number**<details><summary>Read more</summary>
+Start counting from any number, even negative numbers
+</details>
+
+- [x] **Any Interval**<details><summary>Read more</summary>
+Force users to count in any interval.
+<br>Count up, down, or by seven's like: `14, 21, 28`
+</details>
+
+- [x] **Talking**<details><summary>Read more</summary>
+Allow users to have text after the specified number
+</details>
+
+- [x] **Alternate**<details><summary>Read more</summary>
+Force users to Alternate beetween eachother.
+</details>
+
+- [x] **Fonts**<details><summary>Read more</summary>
+By counting you earn points, which then can be used to buy numerous fonts to count with.
+</details>
+
+- [x] **Game Modes**<details><summary>Read more</summary>
+  1. Tug of War
+  2. More to come
+</details>
 
 
 ## To do
