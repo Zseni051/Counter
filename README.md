@@ -12,7 +12,24 @@
         <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" alt="Email_Contact"></a>
 </div>
 
-## Features
-invite: [link](https://discord.com/api/oauth2/authorize?client_id=862604561515937813&permissions=4294967287&scope=bot%20applications.commands)
+**Showcase:** [video](https://youtu.be/1N_Zljly40s)
+<br>**Invite:** [link](https://discord.com/api/oauth2/authorize?client_id=862604561515937813&permissions=4294967287&scope=bot%20applications.commands)
 
-Showcase: https://youtu.be/1N_Zljly40s
+## Features
+- [x] **Easy Fast Setup**
+- [x] **Any Starting Number**
+- [x] **Any Interval**
+- [x] **Talking**
+<br>- Allow users to have text after the specified number
+- [x] **Alternate**
+<br>- Force users to Alternate beetween eachother.
+- [x] **Fonts**
+<br>- By counting you earn points, which then can be used to buy numerous fonts to count with.
+- [x] **Game Modes**
+<br>- Tug of War
+
+
+
+## To do
+- [ ] Add more gamemodes
+- [ ] Add slash commands
