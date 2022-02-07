@@ -14,3 +14,5 @@
 
 ## Features
 invite: [link](https://discord.com/api/oauth2/authorize?client_id=862604561515937813&permissions=4294967287&scope=bot%20applications.commands)
+
+Showcase: https://youtu.be/1N_Zljly40s
